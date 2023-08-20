@@ -1,0 +1,19 @@
+apiVersion: apps.v1
+kind: Deployment
+metadata:
+  name: redis-fronend-app
+  labels:
+    app:companyapp.com
+    environment: development
+
+spec:
+  replicas: 4
+  template:
+    metadata:
+      name: redis-pod
+      labels:
+        app: companyapp.com
+    spec:
+      containers:
+       - name: redis
+         imag: redis
